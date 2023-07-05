@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #007991, #78ffd6);
+  align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: capitalize;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.chat-container {
+  width: 50rem;
+  height: 75vh;
+  overflow-y: scroll;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 10px 20px;
+  border-radius: 10px 10px 0 0;
+}
+.chatbox {
+  border-radius: 5px;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  border-radius: 0px 8px 8px 8px;
+  background: linear-gradient(135deg, #007991, #78ffd6);
+  color: white;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+.me span {
+  text-align: end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+span {
+  color: rgb(28, 26, 26);
+  font-size: .7rem;
+}
+
+.container {
+  display: flex;
+}
+.me .chatbox {
+  background-color: cyan;
+  border-radius: 8px 0 8px 8px;
+  background: linear-gradient(135deg, #ff6fd8, #3813c2);
+  color: white;
+}
+.container.me {
+  flex-direction: row-reverse;
+}
+
+.botton {
+  display: flex;
+  bottom: 2px;
+  flex-direction: row;
+}
+.botton input {
+  width: 90%;
+  height: 1.5rem;
+  padding: 10px 20px;
+  border: 2px solid black;
+  outline: none;
+  font-size: 2rem;
+  border-radius: 0 0 0 10px;
+}
+::placeholder {
+  font-size: 2rem;
+  color: lightgrey;
+  text-transform: capitalize;
+}
+.botton button {
+  height: 3rem;
+  padding: 10px;
+  font-size: 1.5rem;
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 0 10px 0;
+}
+
+.setnamebtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70vh;
+}
+.setbtn {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+  font-size: 3rem;
+  border-radius: 8px;
+  border-color: grey;
+  cursor: pointer;
+}
+
+/* Width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff0084, #33001b);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff0084, #b8005f);
+}
+
+@media screen and (max-width: 1000px) {
+  .chat-container {
+    width: 30rem;
+    min-height: 30vh;
   }
-  to {
-    transform: rotate(360deg);
+  .chatbox {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 555px) {
+  .chat-container {
+    width: 25rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  .botton input {
+    width: 63%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .chat-container {
+    width: 13rem;
+  }
+  .botton input {
+    width: 47%;
+  }
+  .chatbox {
+    font-size: 0.8rem;
   }
 }
