@@ -1,94 +1,104 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
 }
 .app {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #007991, #78ffd6);
-  align-items: center;
   display: flex;
+  background: linear-gradient(135deg, #007991, #78ffd6);
   flex-direction: column;
   align-items: center;
 }
-
-h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  text-transform: capitalize;
-  color: white;
+.app-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
-
+h1 {
+  color: white;
+  background-color: black;
+  width: 100%;
+  border-radius: 8px;
+  text-align: center;
+}
 .chat-container {
-  width: 50rem;
-  height: 75vh;
+  width: 100%;
+  height: 85%;
   overflow-y: scroll;
-  background: linear-gradient(135deg, #667eea, #764ba2);
   padding: 10px 20px;
-  border-radius: 10px 10px 0 0;
+  margin-bottom: 1rem;
+}
+.botton {
+  position: absolute;
+  bottom: 1px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px;
+}
+.botton input {
+  flex-grow: 2;
+  padding: 10px 15px;
+  border: 2px solid black;
+  outline: none;
+}
+.botton button {
+  padding: 5px 10px;
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.container {
+  display: flex;
 }
 .chatbox {
-  border-radius: 5px;
-  margin: 5px 0;
-  display: flex;
-  flex-direction: column;
-  padding: 5px 10px;
-  border-radius: 0px 8px 8px 8px;
-  background: linear-gradient(135deg, #007991, #78ffd6);
+  background-color: black;
   color: white;
-  font-size: 1.1rem;
-  text-transform: capitalize;
+  padding: 5px 10px;
+  display: flexbox;
+  flex-direction: column;
+  border-radius: 0px 10px 10px 10px;
+  margin: 0.1rem;
 }
 .me span {
   text-align: end;
 }
 
 span {
-  color: rgb(28, 26, 26);
-  font-size: .7rem;
-}
-
-.container {
-  display: flex;
+  color: grey;
+  font-size: 0.7rem;
+  display: block;
+  text-align: left;
 }
 .me .chatbox {
-  background-color: cyan;
-  border-radius: 8px 0 8px 8px;
-  background: linear-gradient(135deg, #ff6fd8, #3813c2);
-  color: white;
+  border-radius: 10px 0 10px 10px;
+  color: black;
+  background-color: white;
+}
+.me .chatbox span {
+  color: #0c0b0b;
 }
 .container.me {
   flex-direction: row-reverse;
 }
-
-.botton {
-  display: flex;
-  bottom: 2px;
-  flex-direction: row;
-}
-.botton input {
-  width: 90%;
-  height: 1.5rem;
-  padding: 10px 20px;
-  border: 2px solid black;
-  outline: none;
-  font-size: 2rem;
-  border-radius: 0 0 0 10px;
-}
 ::placeholder {
-  font-size: 2rem;
+  font-size: 1rem;
   color: lightgrey;
   text-transform: capitalize;
 }
-.botton button {
-  height: 3rem;
-  padding: 10px;
-  font-size: 1.5rem;
-  border: 2px solid black;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  border-radius: 0 0 10px 0;
+::-webkit-scrollbar {
+  display: none;
+}
+.chat-container {
+  min-width: 250px;
+  min-height: 300px;
 }
 
 .setnamebtn {
@@ -110,56 +120,13 @@ span {
   cursor: pointer;
 }
 
-/* Width and height of the scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #ff0084, #33001b);
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #ff0084, #b8005f);
-}
-
-@media screen and (max-width: 1000px) {
-  .chat-container {
-    width: 30rem;
-    min-height: 30vh;
-  }
-  .chatbox {
-    font-size: 0.8rem;
+@media (max-width: 1200px) {
+  .app {
+    height: 90vh;
   }
 }
-@media screen and (max-width: 555px) {
-  .chat-container {
-    width: 25rem;
-  }
-  h1 {
-    font-size: 1rem;
-  }
-  .botton input {
-    width: 63%;
-  }
-}
-@media screen and (max-width: 360px) {
-  .chat-container {
-    width: 13rem;
-  }
-  .botton input {
-    width: 47%;
-  }
-  .chatbox {
-    font-size: 0.8rem;
+@media (max-width: 555px) {
+  .app-container {
+    width: 100%;
   }
 }
